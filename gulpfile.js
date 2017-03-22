@@ -12,7 +12,7 @@ var gulp         = require('gulp'),
     livereload   = require('gulp-livereload');
 
 gulp.task('css', function() {
-    gulp.src('./assets/css/style.scss')
+    gulp.src('./assets/css/style.sass')
         .pipe(sass())
         .pipe(sourcemaps.init())
         .pipe(postcss([ autoprefixer({ browsers: ['> 0%'] }) ]))
@@ -31,7 +31,7 @@ gulp.task('js', function (cb) {
     ], cb);
 });
 gulp.task('watch', function () {
-    gulp.watch('./assets/css/*.scss', ['css']).on('change', livereload.changed);
+    gulp.watch('./assets/css/*.sass', ['css']).on('change', livereload.changed);
     gulp.watch('./assets/js/scripts.js', ['js']).on('change', livereload.changed);
     livereload.listen();
 });
