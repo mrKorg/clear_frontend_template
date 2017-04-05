@@ -19,13 +19,14 @@
       @content
 
 // Position
-@mixin position($position, $top, $right, $bottom, $left, $z-index)
+@mixin position($position, $top, $right, $bottom, $left, $z-index: 0)
   position: $position
   top: $top
   right: $right
   bottom: $bottom
   left: $left
-  z-index: $z-index
+  @if ($z-index)
+    z-index: $z-index
 
 // Clear fix
 @mixin clearfix
