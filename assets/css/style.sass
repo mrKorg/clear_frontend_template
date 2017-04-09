@@ -18,7 +18,7 @@ $red: #fd0022
 body
   font-size: 14px
 
-
+// Extends
 %title
   line-height: 1.1
   @media (min-width: 1200px)
@@ -31,7 +31,6 @@ body
     font-size: 30px
     margin-bottom: 20px
 
-
 %box
   @media (min-width: 1200px)
     padding: 70px 0
@@ -40,8 +39,8 @@ body
   @media (max-width: 767px)
     padding: 30px 0
 
-
-.e-btn
+// Buttons
+.eBtn
   display: inline-block
   vertical-align: top
   text-align: center
@@ -57,23 +56,23 @@ body
   @include modifier(pink)
     background: $pink
     &:hover
-      background: darken($pink,10%)
+      background: darken($pink, 10%)
   @include modifier(blue)
     background: $blue
     &:hover
-      background: darken($blue,10%)
+      background: darken($blue, 10%)
   @include modifier(yellow)
     background: $yellow
     &:hover
-      background: darken($yellow,10%)
+      background: darken($yellow, 10%)
   @include modifier(white)
     background: $white
     color: $pink
     &:hover
       opacity: 0.7
 
-
-.m-popup
+// Popup
+.mPopup
   position: relative
   background: #FFF
   width: auto
@@ -93,7 +92,41 @@ body
   .mfp-close
     color: $pink
 
+// Form
+.mForm
+  padding: 0 20px
+  @include element(title)
+    font-size: 30px
+    text-transform: uppercase
+    color: $pink
+    margin-bottom: 40px
+  @include element(row)
+    margin-bottom: 10px
+    @include modifier(required)
+      position: relative
+      &::before
+        content: "*"
+        @include position(absolute, 0, null, null, -15px, 1)
+        color: $red
+        line-height: 45px
+        height: 45px
+        font-size: 20px
+  input, select
+    display: block
+    width: 100%
+    border-radius: 4px
+    padding: 0 15px
+    font-size: 14px
+    border: 1px solid rgba($black, 0.5)
+    height: 45px
+    box-sizing: border-box
+    color: $black !important
+    &:hover
+      border: 1px solid rgba($black, 0.8)
+    &:focus
+      border: 1px solid $blue
 
+// Panel
 .cd-panel
   position: fixed
   z-index: 2000
@@ -151,6 +184,7 @@ body
         animation: cd-close-1 0.6s 0.3s
       &::after
         animation: cd-close-2 0.6s 0.3s
+
 .no-touch
   .cd-panel-close
     &:hover
@@ -164,6 +198,7 @@ body
         transform: rotate(220deg)
       &::after
         transform: rotate(135deg)
+
 .cd-panel-container
   position: fixed
   width: 100%
@@ -177,11 +212,11 @@ body
   @include modifier(black)
     background: $black
     @media (min-width: 400px)
-    max-width: 200px
+      max-width: 200px
   @include modifier(white)
     background: $white
     @media (min-width: 400px)
-    max-width: 420px
+      max-width: 420px
   .from-right &
     right: 0
     transform: translate3d(100%, 0, 0)
@@ -191,6 +226,7 @@ body
   .is-visible &
     transform: translate3d(0, 0, 0)
     transition-delay: 0s
+
 .cd-panel-content
   position: absolute
   top: 0
@@ -200,39 +236,5 @@ body
   padding: 70px 20px 0 20px
   -webkit-overflow-scrolling: touch
   @media (max-width: 991px) and (max-height: 500px)
-  overflow-y: scroll
-.m-form
-  padding: 0 20px
-  @include element(title)
-    font-size: 30px
-    text-transform: uppercase
-    color: $pink
-    margin-bottom: 40px
-  @include element(row)
-    margin-bottom: 10px
-    @include modifier(required)
-      position: relative
-      &::before
-        content: "*"
-        @include position(absolute,0,null,null,-15px,1)
-        color: $red
-        line-height: 45px
-        height: 45px
-        font-size: 20px
-  input, select
-    display: block
-    width: 100%
-    border-radius: 4px
-    padding: 0 15px
-    font-size: 14px
-    border: 1px solid rgba($black,0.5)
-    height: 45px
-    box-sizing: border-box
-    color: $black !important
-    &:hover
-      border: 1px solid rgba($black,0.8)
-    &:focus
-      border: 1px solid $blue
-
-
+    overflow-y: scroll
 
