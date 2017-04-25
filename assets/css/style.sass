@@ -238,3 +238,32 @@ body
   @media (max-width: 991px) and (max-height: 500px)
     overflow-y: scroll
 
+.content
+  p
+    margin-bottom: 10px
+    line-height: 1.65
+    text-indent: 30px
+  ol, ul
+    line-height: 1.5
+    margin-left: 30px
+    margin-bottom: 10px
+  a
+    text-decoration: underline
+    &:hover
+      opacity: 0.8
+      text-decoration: none
+  img
+    &.aligncenter
+      margin: 0 auto 20px
+      display: block
+    &.alignright
+      float: right
+      margin: 0 0 20px 20px
+    &.alignleft
+      float: left
+      margin: 0 20px 20px 0
+  table
+    td
+      border: 1px solid $black
+      padding: 5px 10px
+      font-size: 12px

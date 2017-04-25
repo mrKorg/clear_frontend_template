@@ -46,5 +46,16 @@
   @if ($mb != 0)
     margin-bottom: $mb
 
+@mixin f-width($width)
+  flex-basis: $width
+  max-width: $width
 
-
+@mixin placeholder($placeholder)
+  &::-webkit-input-placeholder
+    color: $placeholder
+  &::-moz-placeholder
+    color: $placeholder
+  &:-moz-placeholder
+    color: $placeholder
+  &:-ms-input-placeholder
+    color: $placeholder
