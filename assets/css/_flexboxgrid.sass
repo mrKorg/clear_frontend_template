@@ -1,25 +1,19 @@
 @import "_flex"
 
 $grid-columns: 12 !default
-$gutter-width: 20px !default
-$outer-margin: 20px !default
-
-$xl: 1500px
-$lg-top: 1499px
+$gutter-width: 1rem !default
+$outer-margin: 2rem !default
 $lg: 1200px
 $md-top: 1199px
 $md: 768px
 $xs: 767px
-
-$breakpoints: xs $xs 520px, md $md ($md - 50px), lg $lg ($lg - 30px), xl $xl ($xl - 30px) !default
+$breakpoints: xs $xs 480px, md $md 740px, lg $lg 1199px !default
+$flexboxgrid-max-width: 1300px !default
 $gutter-compensation: $gutter-width * .5 * -1
 $half-gutter-width: $gutter-width * .5
 
-@mixin xl
-  @media (min-width: #{$xl})
-    @content
 @mixin lg
-  @media (min-width: #{$lg}) and (max-width: #{$lg-top})
+  @media (min-width: #{$lg})
     @content
 @mixin md
   @media (min-width: #{$md}) and (max-width: #{$md-top})
@@ -30,8 +24,8 @@ $half-gutter-width: $gutter-width * .5
 
 .container
   box-sizing: border-box
+  max-width: $flexboxgrid-max-width
   margin: 0 auto
-  min-width: 320px
   @media (min-width: 544px)
     padding-right: $half-gutter-width
     padding-left: $half-gutter-width
