@@ -1,10 +1,14 @@
+jQuery(window).load(function () {
+
+    // Loader
+    jQuery('#page-preloader').fadeOut('slow');
+    jQuery('#page-preloader .spinner').fadeOut('slow');
+
+});
+
 jQuery(document).ready(function($) {
     
     "use strict";
-
-    // Loader
-    $('#page-preloader').fadeOut('slow');
-    $('#page-preloader .spinner').fadeOut('slow');
 
     // Slider
     $('.js-w-slider').slick({
@@ -31,6 +35,15 @@ jQuery(document).ready(function($) {
     $('.js-m-video').magnificPopup({
         disableOn: 700,
         type: 'iframe',
+        iframe: {
+            patterns: {
+                youtube: {
+                    index: 'youtube.com',
+                    id: 'v=',
+                    src: '//www.youtube.com/embed/%id%?rel=0&autoplay=1'
+                }
+            }
+        },
         mainClass: 'mfp-fade',
         removalDelay: 160,
         preloader: false,
